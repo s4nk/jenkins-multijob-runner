@@ -28,7 +28,7 @@ for (job in jobs) {
 hudson.setNumExecutors(1)
 hudson.setNodes(hudson.getNodes())
 
-if (result != Result.SUCCESS && result != Result.UNSTABLE) {
+if (finalResult != Result.SUCCESS && finalResult != Result.UNSTABLE) {
     println "Test suite has failed. Failing jobs: " + failedJobs
     build.getExecutor().interrupt(Result.FAILURE) 
 } else {
